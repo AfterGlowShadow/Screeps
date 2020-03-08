@@ -114,7 +114,9 @@ module.exports.loop = function() {
     }
     
     Game.getObjectById('5e53f1600f2d8f234857fa24').transferEnergy(Game.getObjectById('5e648a81356a961615dd55c6'));
-    Game.getObjectById('5e648a81356a961615dd55c6').transferEnergy(Game.getObjectById('5e5374800a99ae4be2286c7a'), Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) - 300);
+    if (Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) > 300) {
+        Game.getObjectById('5e648a81356a961615dd55c6').transferEnergy(Game.getObjectById('5e5374800a99ae4be2286c7a'), Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) - 300);
+    }
 
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder' && creep.pos.roomName == 'W34N2');
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.pos.roomName == 'W34N2');
@@ -144,7 +146,7 @@ module.exports.loop = function() {
             '\tUpgraders: ' + upgraders.length + '(' + expectedUpgraders + '/1400)'
             );
     console.log('Room "W34N3" has' + 
-            ' Creeps: ' + (builders_W34N3.length + harvesters_W34N3.length + repairers_W34N3.length + upgraders_W34N3.length) + 
+            ' Creeps: ' + (builders_W34N3.length + harvesters_W34N3.length + harvestersFar_W34N3.length + repairers_W34N3.length + suppliers_W34N3.length + transporters_W34N3.length + upgraders_W34N3.length) + 
             '\tBuilders: ' + builders_W34N3.length + '(' + allowBuilder_W34N3 + '/400)' + 
             '\tHarvesters: ' + harvesters_W34N3.length  + '(' + expectedHarvesters_W34N3 + '/200)' + 
             '\tHarvestersFar: ' + harvestersFar_W34N3.length + '(N/A)\t' + 
