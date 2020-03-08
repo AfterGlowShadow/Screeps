@@ -14,7 +14,7 @@ var newTime = 0;
 var fixingMode = 1;
 var marketMode = 0;
 var allowBuilder = 1;
-var allowBuilder_W34N3 = 0;
+var allowBuilder_W34N3 = 1;
 
 var expectedHarvesters = 1;
 var expectedHarvestersFar = 1;
