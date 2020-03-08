@@ -24,7 +24,7 @@ var expectedSuppliers = 1;
 var expectedTransporters = 1;
 var expectedUpgraders = 1;
 
-var expectedHarvesters_W34N3 = 4;
+var expectedHarvesters_W34N3 = 3;
 var expectedHarvestersFar_W34N3 = 0;
 var expectedMiner_W34N3 = 0;
 var expectedRepairers_W34N3 = 0;
@@ -148,7 +148,7 @@ module.exports.loop = function() {
     console.log('Room "W34N3" has' + 
             ' Creeps: ' + (builders_W34N3.length + harvesters_W34N3.length + harvestersFar_W34N3.length + repairers_W34N3.length + suppliers_W34N3.length + transporters_W34N3.length + upgraders_W34N3.length) + 
             '\tBuilders: ' + builders_W34N3.length + '(' + allowBuilder_W34N3 + '/400)' + 
-            '\tHarvesters: ' + harvesters_W34N3.length  + '(' + expectedHarvesters_W34N3 + '/200)' + 
+            '\tHarvesters: ' + harvesters_W34N3.length  + '(' + expectedHarvesters_W34N3 + '/400)' + 
             '\tHarvestersFar: ' + harvestersFar_W34N3.length + '(N/A)\t' + 
             '\tMiner: ' + miners_W34N3.length + '(' + expectedMiner_W34N3 + ')' + 
             '\tRepairers: ' + repairers_W34N3.length + '(' + expectedRepairers_W34N3 + '/400)' + 
@@ -232,11 +232,11 @@ module.exports.loop = function() {
             {memory: {role: 'builder'}});
     }
     
-    //200 Energy
+    //400 Energy
     if (harvesters_W34N3.length < expectedHarvesters_W34N3) {
         var newName = 'Harvester_W34N3_' + Game.time;
         console.log('Spawning new Harvester for W34N3: ' + newName);
-        Game.spawns['Spawn2'].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns['Spawn2'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'harvester'}});
     }
     
