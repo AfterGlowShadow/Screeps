@@ -18,7 +18,7 @@ var allowBuilder_W34N3 = 1;
 
 var expectedHarvesters = 1;
 var expectedHarvestersFar = 1;
-var expectedMiner = 0;
+var expectedMiner = 1;
 var expectedRepairers = 1;
 var expectedSuppliers = 1;
 var expectedTransporters = 1;

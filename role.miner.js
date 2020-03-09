@@ -12,8 +12,8 @@ var roleMiner = {
                 filter: (structure) =>  (structure.structureType == STRUCTURE_LAB)
             });
             if (labs.length > 0) {
-                if (creep.transfer(labs[0], RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(labs[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                if (creep.transfer(labs[3], RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(labs[3], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
         }
