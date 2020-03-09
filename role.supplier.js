@@ -1,7 +1,7 @@
 var roleTransporter = {
 
     /** @param {Creep} creep **/
-    run: function(creep, marketMode) {
+    run: function(creep) {
 	    if (creep.store.getFreeCapacity() > 0) {
                 var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (i) => i.structureType == STRUCTURE_STORAGE

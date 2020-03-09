@@ -12,7 +12,7 @@ var newTime = 0;
 //var expectedBuilders = 1;
 
 var fixingMode = 1;
-var marketMode = 0;
+var marketMode = 1;
 var allowBuilder = 1;
 var allowBuilder_W34N3 = 1;
 
@@ -73,7 +73,7 @@ module.exports.loop = function() {
 
     console.log('Room "' + 'W34N2' + '" has ' + Game.rooms['W34N2'].terminal.store.getUsedCapacity(RESOURCE_ENERGY) + ' Energy to sell, market mode is ' + marketMode + '.');
     if (marketMode) {
-        autoMarket.run(Game.rooms['W34N2'].terminal, marketMode);
+        autoMarket.run(Game.rooms['W34N2'].terminal);
     }
 
     for (var name in Memory.creeps) {
@@ -114,8 +114,8 @@ module.exports.loop = function() {
     }
 
     Game.getObjectById('5e53f1600f2d8f234857fa24').transferEnergy(Game.getObjectById('5e648a81356a961615dd55c6'));
-    if (Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) > 300) {
-        Game.getObjectById('5e648a81356a961615dd55c6').transferEnergy(Game.getObjectById('5e5374800a99ae4be2286c7a'), Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) - 300);
+    if (Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) > 600) {
+        Game.getObjectById('5e648a81356a961615dd55c6').transferEnergy(Game.getObjectById('5e5374800a99ae4be2286c7a'), Game.getObjectById('5e648a81356a961615dd55c6').store.getUsedCapacity(RESOURCE_ENERGY) - 600);
     }
 
     var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder' && creep.pos.roomName == 'W34N2');
