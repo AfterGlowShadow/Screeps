@@ -5,6 +5,6 @@
 ## 发展方向
 
 - 建立反应堆生成ghodium
-	- (ZX + UL = G)
+	- (ZK + UL = G)
 - 压缩utrium
 	- (500utrium + 200energy = 100utrium_bar)
