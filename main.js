@@ -12,7 +12,7 @@ var newTime = 0;
 //var expectedBuilders = 1;
 
 var fixingMode = 1;
-var marketMode = 1;
+var marketMode = 0;
 var allowBuilder = 1;
 var allowBuilder_W34N3 = 1;
 
