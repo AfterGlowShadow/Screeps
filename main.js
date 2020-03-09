@@ -12,7 +12,7 @@ var newTime = 0;
 //var expectedBuilders = 1;
 
 var fixingMode = 1;
-var marketMode = 0;
+var marketMode = 1;
 var allowBuilder = 1;
 var allowBuilder_W34N3 = 1;
 
@@ -33,7 +33,7 @@ var expectedTransporters_W34N3 = 1;
 var expectedUpgraders_W34N3 = 1;
 
 module.exports.loop = function() {
-
+    
     //if (Game.time % 1 == 0) {
         if (!Memory.stats) Memory.stats = {};
         Memory.stats.gcl = (Game.gcl.progress / Game.gcl.progressTotal) * 100;
@@ -143,7 +143,7 @@ module.exports.loop = function() {
             '\tRepairers: ' + repairers.length + '(' + expectedRepairers + '/550)' +
             '\tSuppliers: ' + suppliers.length + '(' + expectedSuppliers + '/150)' +
             '\tTransporters: ' + transporters.length + '(' + expectedTransporters + '/150)' +
-            '\tUpgraders: ' + upgraders.length + '(' + expectedUpgraders + '/1400)'
+            '\tUpgraders: ' + upgraders.length + '(' + expectedUpgraders + '/1150)'
             );
     console.log('Room "W34N3" has' +
             ' Creeps: ' + (builders_W34N3.length + harvesters_W34N3.length + harvestersFar_W34N3.length + repairers_W34N3.length + suppliers_W34N3.length + transporters_W34N3.length + upgraders_W34N3.length) +
@@ -215,11 +215,11 @@ module.exports.loop = function() {
             {memory: {role: 'supplier'}});
     }
 
-    //1400 Energy
+    //1150 Energy
     if (upgraders.length < expectedUpgraders) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new Upgrader: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'upgrader'}});
     }
 
