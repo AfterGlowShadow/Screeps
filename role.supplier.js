@@ -21,14 +21,6 @@ var roleTransporter = {
                     creep.moveTo(tower, {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
-            else {
-                var Terminal = Game.getObjectById('5e5c74531c62123fc3606bce');
-                if ((Terminal.store.getFreeCapacity(RESOURCE_ENERGY) > 0) && marketMode) {
-                    if (creep.transfer(Terminal, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(Terminal, {visualizePathStyle: {stroke: '#ffffff'}});
-                    }
-                }
-            }
         }
 	} 
 };
