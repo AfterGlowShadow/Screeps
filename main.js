@@ -11,6 +11,8 @@ var fixingMode = 1;
 var marketMode = 1;
 
 module.exports.loop = function() {
+    //Game.creeps['claim'].moveTo(new RoomPosition(17, 6, 'W33N5'), {visualizePathStyle: {stroke: '#ffffff'}});
+    //Game.creeps['claim'].reserveController(Game.creeps['claim'].room.controller);
     
     exportGrafana.run();
     

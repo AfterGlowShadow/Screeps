@@ -9,6 +9,7 @@ var consoleExport = {
         console.log('You have ' + Game.market.credits + ' Credits aviliable.');
 
         for (var name in Game.rooms) {
+            if (Game.rooms[name].controller == null) return;
             console.log('Room "' + name + '" has ' + Game.rooms[name].energyAvailable + '/' + Game.rooms[name].energyCapacityAvailable + ' energy.\t' +
                         'Room "' + name + '" controller level is ' + Game.rooms[name].controller.level + ' , progress left ' + (Game.rooms[name].controller.progressTotal - Game.rooms[name].controller.progress) + '.\t');
         }

@@ -5,6 +5,7 @@ var autoTower = {
             var towers = Game.rooms[name].find(FIND_STRUCTURES, {
                 filter: (structure) => structure.structureType == STRUCTURE_TOWER
             });
+            if (towers.length == 0) return;
             var closestHostile = towers[0].pos.findClosestByRange(FIND_HOSTILE_CREEPS);
             if (closestHostile) {
                 for (var i = 0; i < towers.length; i++) towers[i].attack(closestHostile);
