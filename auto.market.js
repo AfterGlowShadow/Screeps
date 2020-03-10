@@ -1,16 +1,24 @@
 var autoDeal = {
     
-    run: function(Terminal) {
-        var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_ENERGY});
-        if (buyOrder[0].price > 0.010) { 
-            var tax = Game.market.calcTransactionCost(500, buyOrder[0].roomName, Terminal.pos.roomName);
-            Game.market.deal(buyOrder[0].id, 500, Terminal.pos.roomName);
-        }
-        
-        var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_UTRIUM});
-        if (buyOrder[0].price > 0.010) { 
-            var tax = Game.market.calcTransactionCost(500, buyOrder[0].roomName, Terminal.pos.roomName);
-            Game.market.deal(buyOrder[0].id, 500, Terminal.pos.roomName);
+    run: function(marketMode) {
+        if (marketMode) {
+            for (var name in Game.room) {
+                Terminal = Game.room[name].terminal;
+                if (Terminal.store.getUsedCapacity(RESOURCE_UTRIUM) == 0) {
+                    var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_ENERGY});
+                    var tax = Game.market.calcTransactionCost(500, buyOrder[0].roomName, Terminal.pos.roomName);
+                    if (buyOrder[0].price > 0.010) {
+                        Game.market.deal(buyOrder[0].id, 500, Terminal.pos.roomName);
+                    }
+                }
+                else {
+                    var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_UTRIUM});
+                    var tax = Game.market.calcTransactionCost(500, buyOrder[0].roomName, Terminal.pos.roomName);
+                    if (buyOrder[0].price > 0.010) { 
+                        Game.market.deal(buyOrder[0].id, 500, Terminal.pos.roomName);
+                    }
+                }
+            }
         }
         
         //var sellOrder = Game.market.getAllOrders({type: ORDER_SELL, resourceType: RESOURCE_ENERGY});

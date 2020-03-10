@@ -1,6 +1,6 @@
 var roleExperimenter = {
     
-    run: function (creep) {
+    run: function(creep) {
         var targets = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (i) =>  (i.structureType == STRUCTURE_LAB)
         });
