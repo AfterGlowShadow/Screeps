@@ -16,13 +16,15 @@ module.exports.loop = function() {
     
     exportConsole.run(marketMode);
     
-    autoMarket.run(marketMode);
+    autoLabtory.run();
     
-    autoTower.run(fixingMode);
+    autoLink.run();
+    
+    autoMarket.run(marketMode);
     
     autoSpawn.run();
     
-    autoWork.run();
+    autoTower.run(fixingMode);
     
-    autoLink.run();
+    autoWork.run();
 }
