@@ -7,7 +7,6 @@ var autoSpawn       = require('auto.spawn');
 var autoTower       = require('auto.tower');
 var autoWork        = require('auto.work');
 
-var fixingMode = 1;
 var marketMode = 1;
 
 module.exports.loop = function() {
@@ -26,7 +25,7 @@ module.exports.loop = function() {
     
     autoSpawn.run();
     
-    autoTower.run(fixingMode);
+    autoTower.run();
     
     autoWork.run();
 }

@@ -1,14 +1,24 @@
 var autoTower = {
     
-    run: function(fixingMode) {
+    run: function() {
+        var fixingMode = 0;
+        
         for (var name in Game.rooms) {
             var towers = Game.rooms[name].find(FIND_STRUCTURES, {
                 filter: (structure) => structure.structureType == STRUCTURE_TOWER
             });
-            if (towers.length == 0) return;
-            var closestHostile = towers[0].pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-            if (closestHostile) {
-                for (var i = 0; i < towers.length; i++) towers[i].attack(closestHostile);
+            if (towers.length) {
+                var closestHostile = Game.rooms[name].controller.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+                if (closestHostile) {
+                    fixingMode = 0;
+                    for (var i = 0; i < towers.length; i++) console.log(towers[i].attack(closestHostile));
+                }
+                else {
+                    fixingMode = 1;
+                }
+            }
+            else {
+                return;
             }
             
             if (fixingMode) {
@@ -35,8 +45,8 @@ var autoTower = {
             var wounded = Game.rooms[name].find(FIND_MY_CREEPS, {
                 filter: (creep) => creep.hits < creep.hitsMax
             });
-            closestDamagedStructure.sort((a,b) => a.hits - b.hits);
             if (wounded) {
+                wounded.sort((a,b) => a.hits - b.hits);
                 for (var i = 0; i < towers.length; i++) towers[i].heal(wounded[0]);
             }
         }
