@@ -18,7 +18,7 @@ var expectedTransporters_W34N3 = 1;
 var expectedUpgraders_W34N3 = 1;
 
 var autoSpawn = {
-    
+
     run: function() {
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder' && creep.pos.roomName == 'W34N2');
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester' && creep.pos.roomName == 'W34N2');
@@ -36,7 +36,7 @@ var autoSpawn = {
         var suppliers_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.pos.roomName == 'W34N3');
         var transporters_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'transporter' && creep.pos.roomName == 'W34N3');
         var upgraders_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.pos.roomName == 'W34N3');
-        
+
         console.log('Room "W34N2" has' +
                 ' Creeps: ' + (builders.length + harvesters.length + harvestersFar.length + repairers.length + suppliers.length + transporters.length + upgraders.length) +
                 '\tBuilders: ' + builders.length + '(' + allowBuilder + '/1800)' +
@@ -57,9 +57,9 @@ var autoSpawn = {
                 '\tRepairers: ' + repairers_W34N3.length + '(' + expectedRepairers_W34N3 + '/400)' +
                 '\tSuppliers: ' + suppliers_W34N3.length + '(' + expectedSuppliers_W34N3 + '/100)' +
                 '\tTransporters: ' + transporters_W34N3.length + '(' + expectedTransporters_W34N3 + '/150)' +
-                '\tUpgraders: ' + upgraders_W34N3.length + '(' + expectedUpgraders_W34N3 + '/400)'
+                '\tUpgraders: ' + upgraders_W34N3.length + '(' + expectedUpgraders_W34N3 + '/1150)'
                 );
-        
+
         //1300 Energy
         if (harvesters.length < expectedHarvesters) {
             var newName = 'Harvester' + Game.time;
@@ -67,7 +67,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'harvester'}});
         }
-    
+
         //1500 Energy
         if (harvestersFar.length < expectedHarvestersFar) {
             var newName = 'HarvesterFar' + Game.time;
@@ -75,7 +75,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'harvesterFar'}});
         }
-    
+
         //800 Energy
         if (miners.length < expectedMiner) {
             var newName = 'Miner' + Game.time;
@@ -83,7 +83,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName,
                 {memory: {role: 'miner'}});
         }
-    
+
         //1800 Energy
         //no construction site no builder, 1 builder only, allowed to spawn
         const constructionTarget = Game.spawns['Spawn1'].pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
@@ -93,7 +93,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], newName,
             {memory: {role: 'builder'}});
         }
-    
+
         //550 Energy
         if (repairers.length < expectedRepairers) {
             var newName = 'Repairers' + Game.time;
@@ -101,7 +101,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], newName,
                 {memory: {role: 'repairer'}});
         }
-    
+
         //150 Energy
         if (transporters.length < expectedTransporters) {
             var newName = 'Transporter' + Game.time;
@@ -109,7 +109,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'transporter'}});
         }
-    
+
         //150 Energy
         if (suppliers.length < expectedSuppliers) {
             var newName = 'Supplier' + Game.time;
@@ -117,7 +117,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([CARRY,CARRY,MOVE], newName,
                 {memory: {role: 'supplier'}});
         }
-    
+
         //1150 Energy
         if (upgraders.length < expectedUpgraders) {
             var newName = 'Upgrader' + Game.time;
@@ -125,7 +125,7 @@ var autoSpawn = {
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'upgrader'}});
         }
-    
+
         //400 Energy
         const constructionTarget_W34N3 = Game.spawns['Spawn2'].pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
         if (constructionTarget_W34N3 != null && builders_W34N3.length == 0 && allowBuilder_W34N3) {
@@ -134,7 +134,7 @@ var autoSpawn = {
             Game.spawns['Spawn2'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'builder'}});
         }
-    
+
         //400 Energy
         if (harvesters_W34N3.length < expectedHarvesters_W34N3) {
             var newName = 'Harvester_W34N3_' + Game.time;
@@ -142,7 +142,7 @@ var autoSpawn = {
             Game.spawns['Spawn2'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'harvester'}});
         }
-    
+
         //400 Energy
         if (repairers_W34N3.length < expectedRepairers_W34N3) {
             var newName = 'Repairer_W34N3_' + Game.time;
@@ -150,7 +150,7 @@ var autoSpawn = {
             Game.spawns['Spawn2'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'repairer'}});
         }
-    
+
         //150 Energy
         if (transporters_W34N3.length < expectedTransporters_W34N3) {
             var newName = 'Transporter_W34N3_' + Game.time;
@@ -158,7 +158,7 @@ var autoSpawn = {
             Game.spawns['Spawn2'].spawnCreep([CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'transporter'}});
         }
-    
+
         //150 Energy
         if (suppliers_W34N3.length < expectedSuppliers_W34N3) {
             var newName = 'Supplier_W34N3_' + Game.time;
@@ -166,15 +166,15 @@ var autoSpawn = {
             Game.spawns['Spawn2'].spawnCreep([CARRY,CARRY,MOVE], newName,
                 {memory: {role: 'supplier'}});
         }
-    
+
         //400 Energy
         if (upgraders_W34N3.length < expectedUpgraders_W34N3) {
             var newName = 'Upgrader_W34N3_' + Game.time;
             console.log('Spawning new Upgrader for W34N3: ' + newName);
-            Game.spawns['Spawn2'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn2'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'upgrader'}});
         }
-        
+
         if (Game.spawns['Spawn1'].spawning) {
             var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
             Game.spawns['Spawn1'].room.visual.text(
@@ -183,7 +183,7 @@ var autoSpawn = {
                 Game.spawns['Spawn1'].pos.y,
                 {align: 'left', opacity: 0.8});
         }
-        
+
         if (Game.spawns['Spawn2'].spawning) {
             var spawningCreep = Game.creeps[Game.spawns['Spawn2'].spawning.name];
             Game.spawns['Spawn2'].room.visual.text(
