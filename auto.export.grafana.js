@@ -1,3 +1,6 @@
+var oldTime = new Date().getTime();
+var newTime = 0;
+
 var grafanaExport = {
 
     run: function() {
@@ -20,6 +23,10 @@ var grafanaExport = {
         Memory.stats.valueUtrium = Order[0].price;
         var Order = Game.market.getAllOrders({type: ORDER_SELL, resourceType: SUBSCRIPTION_TOKEN});
         Memory.stats.valueToken = Order[0].price / 1000000;
+        
+        newTime = new Date().getTime();
+        Memory.stats.tickDuration = (newTime - oldTime) / 1000;
+        oldTime = newTime;
     }
 }
 
