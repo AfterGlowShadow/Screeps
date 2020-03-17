@@ -3,7 +3,7 @@ var allowBuilder_W34N3 = 1;
 
 var expectedHarvesters = 1;
 var expectedHarvestersFar = 1;
-var expectedMiner = 0;
+var expectedMiner = 2;
 var expectedRepairers = 1;
 var expectedSuppliers = 1;
 var expectedTransporters = 1;
@@ -15,7 +15,7 @@ var expectedMiner_W34N3 = 0;
 var expectedRepairers_W34N3 = 0;
 var expectedSuppliers_W34N3 = 1;
 var expectedTransporters_W34N3 = 1;
-var expectedUpgraders_W34N3 = 1;
+var expectedUpgraders_W34N3 = 3;
 
 var autoSpawn = {
     
