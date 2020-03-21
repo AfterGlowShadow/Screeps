@@ -13,10 +13,11 @@ module.exports.loop = function() {
     //Game.spawns['Spawn2'].spawnCreep([TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,CLAIM,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE],'claim');
     //Game.creeps['claim'].moveTo(new RoomPosition(49, 3, 'W34N4'), {visualizePathStyle: {stroke: '#ffffff'}});
     //Game.creeps['claim'].moveTo(new RoomPosition(17, 6, 'W33N5'), {visualizePathStyle: {stroke: '#ffffff'}});
-    //Game.spawns['Spawn2'].spawnCreep([TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE],'builder2');
-    Game.creeps['builder2'].moveTo(new RoomPosition(49, 3, 'W34N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    //Game.spawns['Spawn2'].spawnCreep([TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,WORK,WORK,CARRY,CARRY],'builder2');
+    //Game.creeps['builder2'].moveTo(new RoomPosition(49, 3, 'W34N4'), {visualizePathStyle: {stroke: '#ffffff'}});
     //Game.creeps['builder2'].moveTo(new RoomPosition(4, 34, 'W33N5'), {visualizePathStyle: {stroke: '#ffffff'}});
     //Game.creeps['builder2'].memory.role = 'builder';
+    //Game.creeps['attacker'].moveTo(new RoomPosition(9, 3, 'W33N4'), {visualizePathStyle: {stroke: '#ffffff'}});
     
     exportGrafana.run();
     

@@ -41,6 +41,15 @@ var autoTower = {
                         towers[1].repair(closestDamagedStructure[0]);
                     }
                 }
+                if (towers[2]) {
+                    var closestDamagedStructure = towers[2].pos.findInRange(FIND_STRUCTURES, 20, {
+                        filter: (structure) => (structure.structureType != STRUCTURE_WALL) && (structure.structureType != STRUCTURE_RAMPART) && (structure.hits < structure.hitsMax)
+                    });
+                    closestDamagedStructure.sort((a,b) => a.hits - b.hits);
+                    if (closestDamagedStructure.length > 0) {
+                        towers[2].repair(closestDamagedStructure[0]);
+                    }
+                }
             }
             
             var wounded = Game.rooms[name].find(FIND_MY_CREEPS, {

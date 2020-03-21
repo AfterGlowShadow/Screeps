@@ -15,7 +15,7 @@ var expectedMiner_W34N3 = 0;
 var expectedRepairers_W34N3 = 0;
 var expectedSuppliers_W34N3 = 1;
 var expectedTransporters_W34N3 = 1;
-var expectedUpgraders_W34N3 = 3;
+var expectedUpgraders_W34N3 = 1;
 
 var autoSpawn = {
     
@@ -45,7 +45,7 @@ var autoSpawn = {
                 '\tMiner: ' + miners.length + '(' + expectedMiner + '/800)' +
                 '\tRepairers: ' + repairers.length + '(' + expectedRepairers + '/550)' +
                 '\tSuppliers: ' + suppliers.length + '(' + expectedSuppliers + '/150)' +
-                '\tTransporters: ' + transporters.length + '(' + expectedTransporters + '/150)' +
+                '\tTransporters: ' + transporters.length + '(' + expectedTransporters + '/200)' +
                 '\tUpgraders: ' + upgraders.length + '(' + expectedUpgraders + '/1150)'
                 );
         console.log('Room "W34N3" has' +
@@ -102,11 +102,11 @@ var autoSpawn = {
                 {memory: {role: 'repairer'}});
         }
     
-        //150 Energy
+        //200 Energy
         if (transporters.length < expectedTransporters) {
             var newName = 'Transporter' + Game.time;
             console.log('Spawning new Transporter: ' + newName);
-            Game.spawns['Spawn1'].spawnCreep([CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn1'].spawnCreep([CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'transporter'}});
         }
     
