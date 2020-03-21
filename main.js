@@ -7,11 +7,15 @@ var autoSpawn       = require('auto.spawn');
 var autoTower       = require('auto.tower');
 var autoWork        = require('auto.work');
 
-var marketMode = 1;
+var marketMode = 0;
 
 module.exports.loop = function() {
+    //Game.creeps['claim'].moveTo(new RoomPosition(49, 3, 'W34N4'), {visualizePathStyle: {stroke: '#ffffff'}});
     //Game.creeps['claim'].moveTo(new RoomPosition(17, 6, 'W33N5'), {visualizePathStyle: {stroke: '#ffffff'}});
-    //Game.creeps['claim'].reserveController(Game.creeps['claim'].room.controller);
+    //Game.spawns['Spawn2'].spawnCreep([TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,TOUGH,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE],'builder')
+    Game.creeps['builder'].moveTo(new RoomPosition(49, 3, 'W34N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    //Game.creeps['builder'].moveTo(new RoomPosition(17, 6, 'W33N5'), {visualizePathStyle: {stroke: '#ffffff'}});
+    //Game.creeps['builder'].memory.role = 'builder';
     
     exportGrafana.run();
     

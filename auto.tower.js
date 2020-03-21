@@ -7,6 +7,7 @@ var autoTower = {
             var towers = Game.rooms[name].find(FIND_STRUCTURES, {
                 filter: (structure) => structure.structureType == STRUCTURE_TOWER
             });
+            
             if (towers.length) {
                 var closestHostile = Game.rooms[name].controller.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
                 if (closestHostile) {
@@ -18,7 +19,7 @@ var autoTower = {
                 }
             }
             else {
-                return;
+                continue;
             }
             
             if (fixingMode) {

@@ -5,10 +5,10 @@ var autoDeal = {
             for (var name in Game.rooms) {
                 if (Game.rooms[name].terminal == null) continue;
                 Terminal = Game.rooms[name].terminal;
-                if (Terminal.store.getUsedCapacity(RESOURCE_UTRIUM) < 1000) {
+                if (Terminal.store.getUsedCapacity(RESOURCE_UTRIUM) < 5000) {
                     var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_ENERGY});
                     var tax = Game.market.calcTransactionCost(1000, buyOrder[0].roomName, Terminal.pos.roomName);
-                    if (buyOrder[0].price > 0.010) {
+                    if (buyOrder[0].price > 0.000) {
                         Game.market.deal(buyOrder[0].id, 1000, Terminal.pos.roomName);
                     }
                 }
