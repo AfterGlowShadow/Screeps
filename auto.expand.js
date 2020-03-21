@@ -1,3 +1,5 @@
+var targetRoom = 'W33N5';
+
 var autoExpand = {
     
 }
