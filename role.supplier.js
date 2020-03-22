@@ -17,7 +17,7 @@ var roleTransporter = {
             tower = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (structure) =>  (structure.structureType == STRUCTURE_TOWER && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)
             });
-            if (tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+            if (tower) {
                 if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(tower, {visualizePathStyle: {stroke: '#ffffff'}});
                 }
