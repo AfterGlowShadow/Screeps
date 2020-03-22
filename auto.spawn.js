@@ -211,7 +211,7 @@ var autoSpawn = {
             var newName = 'Supplier' + Game.time;
             console.log('Spawning new Supplier: ' + newName);
             Game.spawns['Spawn_W34N2_2'].spawnCreep([CARRY,CARRY,MOVE], newName,
-                {memory: {role: 'Supplier'}});
+                {memory: {role: 'supplier'}});
         }
     }
 }
