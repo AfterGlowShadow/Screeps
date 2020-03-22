@@ -192,6 +192,27 @@ var autoSpawn = {
                 Game.spawns['Spawn2'].pos.y,
                 {align: 'left', opacity: 0.8});
         }
+        
+        if (Game.spawns['Spawn_W34N2_2'].spawning) {
+            var spawningCreep = Game.creeps[Game.spawns['Spawn_W34N2_2'].spawning.name];
+            Game.spawns['Spawn_W34N2_2'].room.visual.text(
+                '🛠️' + spawningCreep.memory.role,
+                Game.spawns['Spawn_W34N2_2'].pos.x + 1,
+                Game.spawns['Spawn_W34N2_2'].pos.y,
+                {align: 'left', opacity: 0.8});
+        }
+        
+        //special rule
+        //1.Spawn_W34N4_2 Gen supplier @W34N2 22, 19
+        var supplier = Game.spawns['Spawn_W34N2_2'].pos.findInRange(FIND_MY_CREEPS, 3, {
+            filter: (creep) => creep.memory.role == 'supplier'
+        });
+        if (supplier.length == 0) {
+            var newName = 'Supplier' + Game.time;
+            console.log('Spawning new Supplier: ' + newName);
+            Game.spawns['Spawn_W34N2_2'].spawnCreep([CARRY,CARRY,MOVE], newName,
+                {memory: {role: 'Supplier'}});
+        }
     }
 }
 
