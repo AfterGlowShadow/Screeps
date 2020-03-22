@@ -204,7 +204,7 @@ var autoSpawn = {
         
         //special rule
         //1.Spawn_W34N4_2 Gen supplier @W34N2 22, 19
-        var supplier = Game.spawns['Spawn_W34N2_2'].pos.findInRange(FIND_MY_CREEPS, 3, {
+        var supplier = Game.spawns['Spawn_W34N2_2'].pos.findInRange(FIND_MY_CREEPS, 10, {
             filter: (creep) => creep.memory.role == 'supplier'
         });
         if (supplier.length == 0) {
