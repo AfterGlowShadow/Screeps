@@ -1,6 +1,6 @@
 var allowBuilder = 1;
 var allowBuilder_W34N3 = 1;
-var allowBuilder_W33N5 = 0;
+var allowBuilder_W33N5 = 1;
 
 var expectedHarvesters = 1;
 var expectedHarvestersFar = 1;
@@ -208,7 +208,7 @@ var autoSpawn = {
         }
         
         //W33N5
-        //1300 Energy
+        //200 Energy
         if (harvesters_W33N5.length < expectedHarvesters_W33N5) {
             var newName = 'Harvester_W33N5_' + Game.time;
             console.log('Spawning new Harvester for W33N5: ' + newName);
@@ -216,7 +216,7 @@ var autoSpawn = {
                 {memory: {role: 'harvester'}});
         }
     
-        //1500 Energy
+        //200 Energy
         if (harvestersFar_W33N5.length < expectedHarvestersFar_W33N5) {
             var newName = 'HarvesterFar_W33N5_' + Game.time;
             console.log('Spawning new HarvesterFar: ' + newName);
@@ -224,7 +224,7 @@ var autoSpawn = {
                 {memory: {role: 'harvesterFar'}});
         }
     
-        //800 Energy
+        //200 Energy
         if (miners_W33N5.length < expectedMiner_W33N5) {
             var newName = 'Miner_W33N5_' + Game.time;
             console.log('Spawning new Miner: ' + newName);
@@ -232,7 +232,7 @@ var autoSpawn = {
                 {memory: {role: 'miner'}});
         }
     
-        //1800 Energy
+        //200 Energy
         //no construction site no builder, 1 builder only, allowed to spawn
         var constructionTarget = Game.spawns['Spawn3'].pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
         if (constructionTarget != null && builders.length == 0 && allowBuilder) {
@@ -242,7 +242,7 @@ var autoSpawn = {
             {memory: {role: 'builder'}});
         }
     
-        //550 Energy
+        //200 Energy
         if (repairers_W33N5.length < expectedRepairers_W33N5) {
             var newName = 'Repairers_W33N5_' + Game.time;
             console.log('Spawning new Repairers: ' + newName);
@@ -266,7 +266,7 @@ var autoSpawn = {
                 {memory: {role: 'supplier'}});
         }
     
-        //1150 Energy
+        //200 Energy
         if (upgraders_W33N5.length < expectedUpgraders_W33N5) {
             var newName = 'Upgrader_W33N5_' + Game.time;
             console.log('Spawning new Upgrader: ' + newName);
