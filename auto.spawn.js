@@ -235,7 +235,7 @@ var autoSpawn = {
         //200 Energy
         //no construction site no builder, 1 builder only, allowed to spawn
         var constructionTarget = Game.spawns['Spawn3'].pos.findClosestByRange(FIND_CONSTRUCTION_SITES);
-        if (constructionTarget != null && builders.length == 0 && allowBuilder) {
+        if (constructionTarget != null && builders_W33N5.length == 0 && allowBuilder_W33N5) {
             var newName = 'Builder_W33N5_' + Game.time;
             console.log('Spawning new Builder: ' + newName);
             Game.spawns['Spawn3'].spawnCreep([WORK,CARRY,MOVE], newName,
