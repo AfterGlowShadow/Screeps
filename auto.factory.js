@@ -1,4 +1,4 @@
-var produseMode = 0;
+var produseMode = 1;
 
 var autoFactory = {
     

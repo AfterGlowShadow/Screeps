@@ -56,38 +56,39 @@ var autoSpawn = {
         var transporters_W33N5 = _.filter(Game.creeps, (creep) => creep.memory.role == 'transporter' && creep.pos.roomName == 'W33N5');
         var upgraders_W33N5 = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.pos.roomName == 'W33N5');
         
-        console.log('Room "W34N2" has' +
-                ' Creeps: ' + (builders.length + harvesters.length + harvestersFar.length + miners.length + repairers.length + suppliers.length + transporters.length + upgraders.length) +
-                '\tBuilders: ' + builders.length + '(' + allowBuilder + '/1800)' +
-                '\tHarvesters: ' + harvesters.length  + '(' + expectedHarvesters + '/1300)' +
-                '\tHarvestersFar: ' + harvestersFar.length + '(' + expectedHarvestersFar + '/1500)' +
-                '\tMiner: ' + miners.length + '(' + expectedMiner + '/800)' +
-                '\tRepairers: ' + repairers.length + '(' + expectedRepairers + '/550)' +
-                '\tSuppliers: ' + suppliers.length + '(' + expectedSuppliers + '/150)' +
-                '\tTransporters: ' + transporters.length + '(' + expectedTransporters + '/200)' +
-                '\tUpgraders: ' + upgraders.length + '(' + expectedUpgraders + '/1150)'
+        console.log('Room\tCreeps\tBuilders\tHarvesters\tHarvestersFar\tMiners   \tRepairers\tSuppliers\tTranspotrert\tUpgraders');
+        console.log('W34N2\t' +
+                (builders.length + harvesters.length + harvestersFar.length + miners.length + repairers.length + suppliers.length + transporters.length + upgraders.length) +
+                '\t' + builders.length + '(' + allowBuilder + '/1800)' +
+                '\t' + harvesters.length  + '(' + expectedHarvesters + '/1300)' +
+                '\t' + harvestersFar.length + '(' + expectedHarvestersFar + '/1500)' +
+                '\t' + miners.length + '(' + expectedMiner + '/800)' +
+                '\t' + repairers.length + '(' + expectedRepairers + '/550)' +
+                '\t' + suppliers.length + '(' + expectedSuppliers + '/150)' +
+                '\t' + transporters.length + '(' + expectedTransporters + '/200)' +
+                '\t' + upgraders.length + '(' + expectedUpgraders + '/1150)'
                 );
-        console.log('Room "W34N3" has' +
-                ' Creeps: ' + (builders_W34N3.length + harvesters_W34N3.length + harvestersFar_W34N3.length + miners_W34N3.length + repairers_W34N3.length + suppliers_W34N3.length + transporters_W34N3.length + upgraders_W34N3.length) +
-                '\tBuilders: ' + builders_W34N3.length + '(' + allowBuilder_W34N3 + '/400)' +
-                '\tHarvesters: ' + harvesters_W34N3.length  + '(' + expectedHarvesters_W34N3 + '/1300)' +
-                '\tHarvestersFar: ' + harvestersFar_W34N3.length + '(N/A)\t' +
-                '\tMiner: ' + miners_W34N3.length + '(' + expectedMiner_W34N3 + ')' +
-                '\tRepairers: ' + repairers_W34N3.length + '(' + expectedRepairers_W34N3 + '/400)' +
-                '\tSuppliers: ' + suppliers_W34N3.length + '(' + expectedSuppliers_W34N3 + '/100)' +
-                '\tTransporters: ' + transporters_W34N3.length + '(' + expectedTransporters_W34N3 + '/150)' +
-                '\tUpgraders: ' + upgraders_W34N3.length + '(' + expectedUpgraders_W34N3 + '/1150)'
+        console.log('W34N3\t' +
+                (builders_W34N3.length + harvesters_W34N3.length + harvestersFar_W34N3.length + miners_W34N3.length + repairers_W34N3.length + suppliers_W34N3.length + transporters_W34N3.length + upgraders_W34N3.length) +
+                '\t' + builders_W34N3.length + '(' + allowBuilder_W34N3 + '/400)' +
+                '\t' + harvesters_W34N3.length  + '(' + expectedHarvesters_W34N3 + '/1300)' +
+                '\t' + harvestersFar_W34N3.length + '(N/A)\t' +
+                '\t' + miners_W34N3.length + '(' + expectedMiner_W34N3 + '/800)' +
+                '\t' + repairers_W34N3.length + '(' + expectedRepairers_W34N3 + '/400)' +
+                '\t' + suppliers_W34N3.length + '(' + expectedSuppliers_W34N3 + '/100)' +
+                '\t' + transporters_W34N3.length + '(' + expectedTransporters_W34N3 + '/150)' +
+                '\t' + upgraders_W34N3.length + '(' + expectedUpgraders_W34N3 + '/1150)'
                 );
-        console.log('Room "W33N5" has' +
-                ' Creeps: ' + (builders_W33N5.length + harvesters_W33N5.length + harvestersFar_W33N5.length + miners_W33N5.length + repairers_W33N5.length + suppliers_W33N5.length + transporters_W33N5.length + upgraders_W33N5.length) +
-                '\tBuilders: ' + builders_W33N5.length + '(' + allowBuilder_W33N5 + '/200)' +
-                '\tHarvesters: ' + harvesters_W33N5.length  + '(' + expectedHarvesters_W33N5 + '/200)' +
-                '\tHarvestersFar: ' + harvestersFar_W33N5.length + '(N/A)\t' +
-                '\tMiner: ' + miners_W33N5.length + '(' + expectedMiner_W33N5 + ')' +
-                '\tRepairers: ' + repairers_W33N5.length + '(' + expectedRepairers_W33N5 + '/200)' +
-                '\tSuppliers: ' + suppliers_W33N5.length + '(' + expectedSuppliers_W33N5 + '/100)' +
-                '\tTransporters: ' + transporters_W33N5.length + '(' + expectedTransporters_W33N5 + '/150)' +
-                '\tUpgraders: ' + upgraders_W33N5.length + '(' + expectedUpgraders_W33N5 + '/200)'
+        console.log('W33N5\t' +
+                (builders_W33N5.length + harvesters_W33N5.length + harvestersFar_W33N5.length + miners_W33N5.length + repairers_W33N5.length + suppliers_W33N5.length + transporters_W33N5.length + upgraders_W33N5.length) +
+                '\t' + builders_W33N5.length + '(' + allowBuilder_W33N5 + '/200)' +
+                '\t' + harvesters_W33N5.length  + '(' + expectedHarvesters_W33N5 + '/400)' +
+                '\t' + harvestersFar_W33N5.length + '(N/A)\t' +
+                '\t' + miners_W33N5.length + '(' + expectedMiner_W33N5 + '/800)' +
+                '\t' + repairers_W33N5.length + '(' + expectedRepairers_W33N5 + '/200)' +
+                '\t' + suppliers_W33N5.length + '(' + expectedSuppliers_W33N5 + '/100)' +
+                '\t' + transporters_W33N5.length + '(' + expectedTransporters_W33N5 + '/150)' +
+                '\t' + upgraders_W33N5.length + '(' + expectedUpgraders_W33N5 + '/400)'
                 );
         
         //w34n2
@@ -108,7 +109,7 @@ var autoSpawn = {
         }
     
         //800 Energy
-        if (miners.length < expectedMiner) {
+        if (Game.getObjectById('5bbcb1b740062e4259e93259').ticksToRegeneration == 0 && miners.length < expectedMiner) {
             var newName = 'Miner' + Game.time;
             console.log('Spawning new Miner: ' + newName);
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName,
@@ -208,11 +209,11 @@ var autoSpawn = {
         }
         
         //W33N5
-        //200 Energy
+        //400 Energy
         if (harvesters_W33N5.length < expectedHarvesters_W33N5) {
             var newName = 'Harvester_W33N5_' + Game.time;
             console.log('Spawning new Harvester for W33N5: ' + newName);
-            Game.spawns['Spawn3'].spawnCreep([WORK,CARRY,MOVE], newName,
+            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'harvester'}});
         }
     
@@ -266,11 +267,11 @@ var autoSpawn = {
                 {memory: {role: 'supplier'}});
         }
     
-        //200 Energy
+        //400 Energy
         if (upgraders_W33N5.length < expectedUpgraders_W33N5) {
             var newName = 'Upgrader_W33N5_' + Game.time;
             console.log('Spawning new Upgrader: ' + newName);
-            Game.spawns['Spawn3'].spawnCreep([WORK,CARRY,MOVE], newName,
+            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'upgrader'}});
         }
         

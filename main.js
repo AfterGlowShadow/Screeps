@@ -8,7 +8,7 @@ var autoSpawn       = require('auto.spawn');
 var autoTower       = require('auto.tower');
 var autoWork        = require('auto.work');
 
-var marketMode = 0;
+var marketMode = 1;
 
 module.exports.loop = function() {
     //Game.spawns['Spawn2'].spawnCreep([CLAIM,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE],'claim');
