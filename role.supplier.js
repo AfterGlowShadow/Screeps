@@ -4,7 +4,8 @@ var roleTransporter = {
     run: function(creep) {
 	    if (creep.store.getFreeCapacity() > 0) {
             var targets = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE)
+                filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE) || 
+                                        (structure.structureType == STRUCTURE_LINK)
             });
             if (targets) {
                 if (creep.withdraw(targets, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
@@ -13,13 +14,12 @@ var roleTransporter = {
             }
         }
         else {
-            tower = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (structure) =>  (structure.structureType == STRUCTURE_TOWER && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) || 
-                                        (structure.structureType == STRUCTURE_LINK)
+            tower = creep.pos.findInRange(FIND_STRUCTURES, 10, {
+                filter: (structure) =>  (structure.structureType == STRUCTURE_TOWER && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)
             });
             if (tower) {
-                if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(tower, {visualizePathStyle: {stroke: '#ffffff'}});
+                if (creep.transfer(tower[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(tower[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
         }
