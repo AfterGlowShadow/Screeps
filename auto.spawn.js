@@ -21,7 +21,7 @@ var expectedUpgraders_W34N3 = 1;
 var expectedHarvesters_W33N5 = 1;
 var expectedHarvestersFar_W33N5 = 0;
 var expectedMiner_W33N5 = 0;
-var expectedRepairers_W33N5 = 0;
+var expectedRepairers_W33N5 = 1;
 var expectedSuppliers_W33N5 = 0;
 var expectedTransporters_W33N5 = 0;
 var expectedUpgraders_W33N5 = 1;
@@ -91,7 +91,7 @@ var autoSpawn = {
                                 '<td>' + miners_W34N3.length + '(' + expectedMiner_W34N3 + '/800)</td>' +
                                 '<td>' + repairers_W34N3.length + '(' + expectedRepairers_W34N3 + '/550)</td>' +
                                 '<td>' + suppliers_W34N3.length + '(' + expectedSuppliers_W34N3 + '/150)</td>' +
-                                '<td>' + transporters_W34N3.length + '(' + expectedTransporters_W34N3 + '/150)</td>' +
+                                '<td>' + transporters_W34N3.length + '(' + expectedTransporters_W34N3 + '/200)</td>' +
                                 '<td>' + upgraders_W34N3.length + '(' + expectedUpgraders_W33N5 + '/1150)</td>' +
                             '</tr>' +
                             '<tr>' +
@@ -128,7 +128,7 @@ var autoSpawn = {
         }
 
         //800 Energy
-        if (Game.getObjectById('5bbcb1b740062e4259e93259').ticksToRegeneration == 0 && miners.length < expectedMiner) {
+        if (miners.length < expectedMiner) {
             var newName = 'Miner' + Game.time;
             console.log('Spawning new Miner: ' + newName);
             Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName,
@@ -207,7 +207,7 @@ var autoSpawn = {
         if (transporters_W34N3.length < expectedTransporters_W34N3) {
             var newName = 'Transporter_W34N3_' + Game.time;
             console.log('Spawning new Transporter for W34N3: ' + newName);
-            Game.spawns['Spawn2'].spawnCreep([CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn2'].spawnCreep([CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'transporter'}});
         }
 
