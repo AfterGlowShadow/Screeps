@@ -1,11 +1,11 @@
-var roleTransporter = {
+var roleSupplier = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
 	    if (creep.store.getFreeCapacity() > 0) {
             var targets = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE) || 
-                                        (structure.structureType == STRUCTURE_LINK)
+                                        (structure.structureType == STRUCTURE_LINK && structure.store[RESOURCE_ENERGY] > 0)
             });
             if (targets) {
                 if (creep.withdraw(targets, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
@@ -26,4 +26,4 @@ var roleTransporter = {
 	} 
 };
 
-module.exports = roleTransporter;
+module.exports = roleSupplier;

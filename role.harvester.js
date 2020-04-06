@@ -6,7 +6,7 @@ var roleHarvester = {
             var links = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => (structure.structureType == STRUCTURE_LINK)
             });
-            if (links.length >= 10) {
+            if (links.length >= 3) {
                 var link = creep.pos.findClosestByRange(FIND_STRUCTURES, {
                     filter: (structure) => (structure.structureType == STRUCTURE_LINK)
                 });
@@ -47,7 +47,8 @@ var roleHarvester = {
                 case 'W33N5':
                     var targets = creep.room.find(FIND_STRUCTURES, {
                         filter: (structure) =>  (structure.structureType == STRUCTURE_SPAWN && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) || 
-                                                (structure.structureType == STRUCTURE_EXTENSION && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)
+                                                (structure.structureType == STRUCTURE_EXTENSION && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) || 
+                                                (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) 
                     });
                     break;
             }
