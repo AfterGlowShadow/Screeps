@@ -14,7 +14,7 @@ var roleSupplier = {
             }
         }
         else {
-            tower = creep.pos.findInRange(FIND_STRUCTURES, 10, {
+            tower = creep.pos.findInRange(FIND_STRUCTURES, 30, {
                 filter: (structure) =>  (structure.structureType == STRUCTURE_TOWER && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0)
             });
             if (tower) {

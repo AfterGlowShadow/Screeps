@@ -1,3 +1,4 @@
+var expand          = require('auto.expand');
 var exportConsole   = require('auto.export.console');
 var exportGrafana   = require('auto.export.grafana');
 var autoFactory     = require('auto.factory');
@@ -20,6 +21,11 @@ module.exports.loop = function() {
     //Game.creeps['builder1'].moveTo(new RoomPosition(4, 34, 'W33N5'), {visualizePathStyle: {stroke: '#ffffff'}});
     //Game.creeps['builder1'].memory.role = 'builder';
     //Game.creeps['attacker'].moveTo(new RoomPosition(9, 3, 'W33N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    
+    console.log();
+    console.log();
+    
+    expand.run();
     
     exportGrafana.run();
     

@@ -46,6 +46,12 @@ var roleTransporter = {
                                             (i.structureType == STRUCTURE_LINK && i.store[RESOURCE_ENERGY] < 400)
                         });
                         break;
+                    case 'W33N5': 
+                        var targets = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                            filter: (i) =>  (i.structureType == STRUCTURE_EXTENSION && i.store[RESOURCE_ENERGY] < 50) || 
+                                            (i.structureType == STRUCTURE_SPAWN && i.store[RESOURCE_ENERGY] < 300)
+                        });
+                        break;
                 }
                 if (targets) {
                     if (creep.transfer(targets, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {

@@ -4,8 +4,6 @@ var newTime = 0;
 var consoleExport = {
 
     run: function(marketMode) {
-        console.log();
-        console.log();
 
         newTime = new Date().getTime();
         console.log('Game Time is: <font color="cyan">' + Game.time + '</font> ' + '(<font color="cyan">' + ((newTime - oldTime) / 1000) + '</font>second).');
