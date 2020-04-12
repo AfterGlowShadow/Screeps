@@ -9,10 +9,13 @@ var autoTower = {
             });
             
             if (towers.length) {
-                var closestHostile = Game.rooms[name].controller.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-                if (closestHostile) {
+                var Hostiles = Game.rooms[name].find(FIND_HOSTILE_CREEPS, {
+                    filter: (creep) =>  (creep.owner.username != 'TheBlackPrince') ||
+                                        (creep.owner.username != 'bestkurisu')
+                });
+                if (Hostiles.length > 0) {
                     fixingMode = 0;
-                    for (var i = 0; i < towers.length; i++) console.log(towers[i].attack(closestHostile));
+                    for (var i = 0; i < towers.length; i++) console.log(towers[i].attack(Hostiles[0]));
                 }
                 else {
                     fixingMode = 1;

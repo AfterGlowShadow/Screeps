@@ -92,7 +92,7 @@ var autoSpawn = {
                                 '<td>' + repairers_W34N3.length + '(' + expectedRepairers_W34N3 + '/550)</td>' +
                                 '<td>' + suppliers_W34N3.length + '(' + expectedSuppliers_W34N3 + '/150)</td>' +
                                 '<td>' + transporters_W34N3.length + '(' + expectedTransporters_W34N3 + '/200)</td>' +
-                                '<td>' + upgraders_W34N3.length + '(' + expectedUpgraders_W33N5 + '/650)</td>' +
+                                '<td>' + upgraders_W34N3.length + '(' + expectedUpgraders_W34N3 + '/650)</td>' +
                             '</tr>' +
                             '<tr>' +
                                 '<td>' + 'W33N5' + '</td>' +
