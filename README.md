@@ -8,3 +8,10 @@
 	- (ZK + UL = G)
 - 压缩utrium
 	- (500utrium + 200energy = 100utrium_bar)
+- 建造进攻/防御平台
+    - 平台
+        - 25 Ranged_Attack
+        - 25 Attack
+    - 牵引
+        - 50 Move
+    - 使用pull()方法
