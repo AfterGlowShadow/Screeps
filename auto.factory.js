@@ -11,6 +11,8 @@ var autoFactory = {
                 if (factory.length > 0) {
                     //50 battery == 600 energy
                     factory[0].produce(RESOURCE_BATTERY);
+                    //500 ultrium + 200 energy == 100 ultrium_bar
+                    factory[0].produce(RESOURCE_UTRIUM_BAR);
                 }
                 else {
                     continue;

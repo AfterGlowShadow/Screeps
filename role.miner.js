@@ -3,6 +3,9 @@ var roleMiner = {
     run: function(creep) {
         
         var terminal = creep.room.terminal;
+        var factory = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+            filter: (structure) => structure.structureType == STRUCTURE_FACTORY
+        });
         
         if (creep.store.getFreeCapacity() > 0) {
             var mineral = creep.pos.findClosestByRange(FIND_MINERALS);
@@ -21,14 +24,14 @@ var roleMiner = {
                     }
                 }
                 else {
-                    if (creep.transfer(terminal, RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(terminal, {visualizePathStyle: {stroke: '#ffffff'}});
+                    if (creep.transfer(factory, RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
                     }
                 }
             }
             else {
-                if (creep.transfer(terminal, RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(terminal, {visualizePathStyle: {stroke: '#ffffff'}});
+                if (creep.transfer(factory, RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
         }

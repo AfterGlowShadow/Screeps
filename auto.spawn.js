@@ -79,7 +79,7 @@ var autoSpawn = {
                                 '<td>' + miners.length + '(' + expectedMiner + '/800)</td>' +
                                 '<td>' + repairers.length + '(' + expectedRepairers + '/550)</td>' +
                                 '<td>' + suppliers.length + '(' + expectedSuppliers + '/150)</td>' +
-                                '<td>' + transporters.length+ '(' + expectedTransporters + '/150)</td>' +
+                                '<td>' + transporters.length+ '(' + expectedTransporters + '/200)</td>' +
                                 '<td>' + upgraders.length + '(' + expectedUpgraders_W33N5 + '/1150)</td>' +
                             '</tr>' +
                             '<tr>' +
@@ -103,8 +103,8 @@ var autoSpawn = {
                                 '<td>' + miners_W33N5.length + '(' + expectedMiner_W33N5 + '/800)</td>' +
                                 '<td>' + repairers_W33N5.length + '(' + expectedRepairers_W33N5 + '/550)</td>' +
                                 '<td>' + suppliers_W33N5.length + '(' + expectedSuppliers_W33N5 + '/150)</td>' +
-                                '<td>' + transporters_W33N5.length+ '(' + expectedTransporters_W33N5 + '/150)</td>' +
-                                '<td>' + upgraders_W33N5.length + '(' + expectedUpgraders_W33N5 + '/400)</td>' +
+                                '<td>' + transporters_W33N5.length+ '(' + expectedTransporters_W33N5 + '/200)</td>' +
+                                '<td>' + upgraders_W33N5.length + '(' + expectedUpgraders_W33N5 + '/1150)</td>' +
                             '</tr>' +
                         '</table></font>';
 
@@ -192,6 +192,7 @@ var autoSpawn = {
             var newName = 'Harvester_W34N3_' + Game.time;
             console.log('Spawning new Harvester for W34N3: ' + newName);
             Game.spawns['Spawn2'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
+            // Game.spawns['Spawn2'].spawnCreep([WORK,CARRY,MOVE], newName,
                 {memory: {role: 'harvester'}});
         }
 
@@ -286,11 +287,11 @@ var autoSpawn = {
                 {memory: {role: 'supplier'}});
         }
 
-        //400 Energy
+        //1150 Energy
         if (upgraders_W33N5.length < expectedUpgraders_W33N5) {
             var newName = 'Upgrader_W33N5_' + Game.time;
             console.log('Spawning new Upgrader: ' + newName);
-            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'upgrader'}});
         }
 
