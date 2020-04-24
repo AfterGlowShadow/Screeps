@@ -18,7 +18,7 @@ var expectedSuppliers_W34N3 = 1;
 var expectedTransporters_W34N3 = 1;
 var expectedUpgraders_W34N3 = 1;
 
-var expectedHarvesters_W33N5 = 2;
+var expectedHarvesters_W33N5 = 1;
 var expectedHarvestersFar_W33N5 = 0;
 var expectedMiner_W33N5 = 0;
 var expectedRepairers_W33N5 = 0;
@@ -98,13 +98,13 @@ var autoSpawn = {
                                 '<td>' + 'W33N5' + '</td>' +
                                 '<td>' + (builders_W33N5.length + harvesters_W33N5.length + harvestersFar_W33N5.length + miners_W33N5.length + repairers_W33N5.length + suppliers_W33N5.length + transporters_W33N5.length + upgraders_W33N5.length) + '</td>' +
                                 '<td>' + builders_W33N5.length + '(' + allowBuilder_W33N5 + '/400)</td>' +
-                                '<td>' + harvesters_W33N5.length + '(' + expectedHarvesters_W33N5 + '/700)</td>' +
+                                '<td>' + harvesters_W33N5.length + '(' + expectedHarvesters_W33N5 + '/1300)</td>' +
                                 '<td>' + harvestersFar_W33N5.length + '(' + expectedHarvestersFar_W33N5 + '/400)</td>' +
                                 '<td>' + miners_W33N5.length + '(' + expectedMiner_W33N5 + '/800)</td>' +
                                 '<td>' + repairers_W33N5.length + '(' + expectedRepairers_W33N5 + '/550)</td>' +
                                 '<td>' + suppliers_W33N5.length + '(' + expectedSuppliers_W33N5 + '/150)</td>' +
                                 '<td>' + transporters_W33N5.length+ '(' + expectedTransporters_W33N5 + '/200)</td>' +
-                                '<td>' + upgraders_W33N5.length + '(' + expectedUpgraders_W33N5 + '/1150)</td>' +
+                                '<td>' + upgraders_W33N5.length + '(' + expectedUpgraders_W33N5 + '/650)</td>' +
                             '</tr>' +
                         '</table></font>';
 
@@ -229,11 +229,11 @@ var autoSpawn = {
         }
 
         //W33N5
-        //700 Energy
+        //1300 Energy
         if (harvesters_W33N5.length < expectedHarvesters_W33N5) {
             var newName = 'Harvester_W33N5_' + Game.time;
             console.log('Spawning new Harvester for W33N5: ' + newName);
-            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'harvester'}});
         }
 
@@ -287,11 +287,11 @@ var autoSpawn = {
                 {memory: {role: 'supplier'}});
         }
 
-        //1150 Energy
+        //650 Energy
         if (upgraders_W33N5.length < expectedUpgraders_W33N5) {
             var newName = 'Upgrader_W33N5_' + Game.time;
             console.log('Spawning new Upgrader: ' + newName);
-            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn3'].spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'upgrader'}});
         }
 
