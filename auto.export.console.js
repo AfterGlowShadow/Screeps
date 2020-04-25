@@ -19,7 +19,8 @@ var consoleExport = {
                         ', progress left <font color="cyan">' + (Game.rooms[name].controller.progressTotal - Game.rooms[name].controller.progress) + '</font>.\t');
         }
 
-        console.log('Room "' + 'W34N2' + '" has <font color="cyan">' + Game.rooms['W34N2'].terminal.store.getUsedCapacity(RESOURCE_ENERGY) + '</font> Energy to sell, market mode is <font color="cyan">' + marketMode + '</font>.');
+        console.log('Room "' + 'W34N2' + '" has <font color="cyan">' + Game.rooms['W34N2'].terminal.store.getUsedCapacity(RESOURCE_ENERGY) + '</font> Energy to use, market mode is <font color="cyan">' + marketMode + '</font>.');
+        console.log('Room "' + 'W34N3' + '" has <font color="cyan">' + Game.rooms['W34N3'].terminal.store.getUsedCapacity(RESOURCE_ENERGY) + '</font> Energy to use, market mode is <font color="cyan">' + marketMode + '</font>.');
 
         for (var name in Memory.creeps) {
             if (!Game.creeps[name]) {
