@@ -16,6 +16,9 @@ module.exports.loop = function() {
     console.log();
     console.log();
     
+    //Game.creeps['claim'].moveTo(new RoomPosition(33, 30, 'W32N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    //Game.creeps['expandBuilder'].moveTo(new RoomPosition(33, 30, 'W32N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    
     expand.run();
     
     exportGrafana.run();

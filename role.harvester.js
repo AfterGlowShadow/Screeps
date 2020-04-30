@@ -49,6 +49,11 @@ var roleHarvester = {
                         filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) 
                     });
                     break;
+                case 'W32N4':
+                    var targets = creep.room.find(FIND_STRUCTURES, {
+                        filter: (structure) =>  (structure.structureType == STRUCTURE_SPAWN && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) 
+                    });
+                    break;
             }
             if (targets.length > 0) {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
