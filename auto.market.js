@@ -47,18 +47,18 @@ var autoDeal = {
                 }
                 
                 // sell energy, left 10000
-                // if (Terminal.store.getUsedCapacity(RESOURCE_ENERGY) > 10000) {
-                //     var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_ENERGY});
-                //     buyOrder.sort((a,b) => b.price - a.price);
-                //     if (buyOrder.length > 0) {
-                //         var tax = Game.market.calcTransactionCost(10, buyOrder[0].roomName, Terminal.pos.roomName);
-                //         if (buyOrder[0].price > 0.000) {
-                //             if (Game.market.deal(buyOrder[0].id, 10, Terminal.pos.roomName) == OK) {
-                //                 console.log('sold 10 energy with ' + tax + ' tax.');
-                //             }
-                //         }
-                //     }
-                // }
+                if (Terminal.store.getUsedCapacity(RESOURCE_ENERGY) > 10000) {
+                    var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_ENERGY});
+                    buyOrder.sort((a,b) => b.price - a.price);
+                    if (buyOrder.length > 0) {
+                        var tax = Game.market.calcTransactionCost(10, buyOrder[0].roomName, Terminal.pos.roomName);
+                        if (buyOrder[0].price > 0.000) {
+                            if (Game.market.deal(buyOrder[0].id, 10, Terminal.pos.roomName) == OK) {
+                                console.log('sold 10 energy with ' + tax + ' tax.');
+                            }
+                        }
+                    }
+                }
             }
         }
         
