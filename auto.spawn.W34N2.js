@@ -21,7 +21,7 @@ var autoSpawn_W34N2 = {
         
         //w34n2
         var spawn = Game.rooms['W34N2'].find(FIND_MY_STRUCTURES, {
-            filter: (structure) => structure.structureType == STRUCTURE_SPAWN && structure.Spawning == undefined
+            filter: (structure) => structure.structureType == STRUCTURE_SPAWN && structure.spawning == undefined
         });
         if (spawn.length > 0) {
             //1300 Energy
@@ -41,7 +41,7 @@ var autoSpawn_W34N2 = {
             }
     
             //800 Energy
-            if (miners.length < expectedMiner) {
+            if (miners.length < expectedMiner && Game.getObjectById('5bbcb1b740062e4259e93259') == 0) {
                 var newName = 'Miner' + Game.time;
                 console.log('Spawning new Miner: ' + newName);
                 spawn[0].spawnCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName,

@@ -67,7 +67,8 @@ var roleTransporter = {
                         // var targets = creep.room.find(FIND_STRUCTURES, {
                             filter: (i) =>  (i.structureType == STRUCTURE_EXTENSION && i.store[RESOURCE_ENERGY] < 50) || 
                                             (i.structureType == STRUCTURE_SPAWN && i.store[RESOURCE_ENERGY] < 300) || 
-                                            (i.structureType == STRUCTURE_LINK && i.store[RESOURCE_ENERGY] < 400)
+                                            (i.structureType == STRUCTURE_LINK && i.store[RESOURCE_ENERGY] < 400) || 
+                                            (i.structureType == STRUCTURE_TERMINAL && i.store[RESOURCE_ENERGY] < 10000)
                         });
                         break;
                 }
