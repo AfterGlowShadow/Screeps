@@ -41,7 +41,7 @@ var autoSpawn_W34N2 = {
             }
     
             //800 Energy
-            if (miners.length < expectedMiner && Game.getObjectById('5bbcb1b740062e4259e93259') == 0) {
+            if (miners.length < expectedMiner && Game.getObjectById('5bbcb1b740062e4259e93259').ticksToRegeneration == undefined) {
                 var newName = 'Miner' + Game.time;
                 console.log('Spawning new Miner: ' + newName);
                 spawn[0].spawnCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], newName,

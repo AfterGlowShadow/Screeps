@@ -1,5 +1,6 @@
-var defence         = require('auto.defence');
-var expand          = require('auto.expand');
+var autoattack      = require('auto.attack');
+var autodefence     = require('auto.defence');
+var autoexpand      = require('auto.expand');
 var exportConsole   = require('auto.export.console');
 var exportGrafana   = require('auto.export.grafana');
 var autoFactory     = require('auto.factory');
@@ -19,10 +20,11 @@ module.exports.loop = function() {
     
     //Game.creeps['claim'].moveTo(new RoomPosition(33, 30, 'W32N4'), {visualizePathStyle: {stroke: '#ffffff'}});
     //Game.creeps['expandBuilder'].moveTo(new RoomPosition(33, 30, 'W32N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    autoattack.run();
     
-    defence.run();
+    autodefence.run();
     
-    expand.run();
+    autoexpand.run();
     
     exportGrafana.run();
     
