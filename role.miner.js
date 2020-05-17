@@ -14,24 +14,16 @@ var roleMiner = {
             }
         }
         else {
-            var labs = creep.room.find(FIND_STRUCTURES, {
-                filter: (structure) =>  (structure.structureType == STRUCTURE_LAB)
-            });
-            if (labs.length > 0) {
-                if (labs[3] != null && labs[3].store.getFreeCapacity == 0) {
-                    if (creep.transfer(labs[3], RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(labs[3], {visualizePathStyle: {stroke: '#ffffff'}});
-                    }
-                }
-                else {
-                    if (creep.transfer(factory, RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
+            for (var resourceType in creep.store) {
+                if (factory.store.getUsedCapacity() < 10000) {
+                    if (creep.transfer(factory, resourceType) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
                     }
                 }
-            }
-            else {
-                if (creep.transfer(factory, RESOURCE_UTRIUM) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(factory, {visualizePathStyle: {stroke: '#ffffff'}});
+                else {
+                    if (creep.transfer(terminal, resourceType) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(terminal, {visualizePathStyle: {stroke: '#ffffff'}});
+                    }
                 }
             }
         }

@@ -18,29 +18,23 @@ module.exports.loop = function() {
     console.log();
     console.log();
     
-    //Game.creeps['claim'].moveTo(new RoomPosition(33, 30, 'W32N4'), {visualizePathStyle: {stroke: '#ffffff'}});
-    //Game.creeps['expandBuilder'].moveTo(new RoomPosition(33, 30, 'W32N4'), {visualizePathStyle: {stroke: '#ffffff'}});
+    //Game.creeps['attacker_W33N5_18096492'].moveTo(new RoomPosition(25, 20, 'W33N3'));
+    
+    // for (var name in Game.creeps) {
+    //     var creep = Game.creeps[name];
+    //     creep.suicide();
+    // }
+    
     autoattack.run();
-    
     autodefence.run();
-    
     autoexpand.run();
-    
     exportGrafana.run();
-    
     exportConsole.run(marketMode);
-    
     autoFactory.run();
-    
     autoLabtory.run();
-    
     autoLink.run();
-    
     autoMarket.run(marketMode);
-    
     autoSpawn.run();
-    
     autoTower.run();
-    
     autoWork.run();
 }

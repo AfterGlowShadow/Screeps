@@ -13,6 +13,8 @@ var autoFactory = {
                     factory[0].produce(RESOURCE_BATTERY);
                     //500 ultrium + 200 energy == 100 ultrium_bar
                     factory[0].produce(RESOURCE_UTRIUM_BAR);
+                    //500 Keanium + 200 energy == 100 Keanium_bar
+                    factory[0].produce(RESOURCE_KEANIUM_BAR);
                 }
                 else {
                     continue;

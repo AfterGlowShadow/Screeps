@@ -75,7 +75,7 @@ var autoSpawn_W34N2 = {
             }
     
             //150 Energy
-            if (suppliers.length < expectedSuppliers + 1) {
+            if (suppliers.length < expectedSuppliers) {
                 var newName = 'Supplier' + Game.time;
                 console.log('Spawning new Supplier: ' + newName);
                 spawn[0].spawnCreep([CARRY,CARRY,MOVE], newName,
