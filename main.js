@@ -3,6 +3,7 @@ var autodefence     = require('auto.defence');
 var autoexpand      = require('auto.expand');
 var exportConsole   = require('auto.export.console');
 var exportGrafana   = require('auto.export.grafana');
+var exportRoom      = require('auto.export.roomVisual');
 var autoFactory     = require('auto.factory');
 var autoLabtory     = require('auto.labtory');
 var autoLink        = require('auto.link');
@@ -28,8 +29,9 @@ module.exports.loop = function() {
     autoattack.run();
     autodefence.run();
     autoexpand.run();
-    exportGrafana.run();
     exportConsole.run(marketMode);
+    exportGrafana.run();
+    exportRoom.run();
     autoFactory.run();
     autoLabtory.run();
     autoLink.run();
