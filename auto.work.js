@@ -6,10 +6,12 @@ var roleMiner           = require('role.miner');
 var roleRepairer        = require('role.repairer');
 var roleSupplier        = require('role.supplier');
 var roleTransporter     = require('role.transporter');
+var roleTransporterSpc  = require('role.transporter.spc');
 var roleUpgrader        = require('role.upgrader');
 
 var autoWork = {
     run: function() {
+        // roleTransporterTest.run(Game.creeps['test']);
         for (var name in Game.creeps) {
             var creep = Game.creeps[name];
             if (creep.memory.role == 'builder') {
@@ -35,6 +37,9 @@ var autoWork = {
             }
             if (creep.memory.role == 'transporter') {
                 roleTransporter.run(creep);
+            }
+            if (creep.memory.role == 'transporterSpc') {
+                roleTransporterSpc.run(creep);
             }
             if (creep.memory.role == 'upgrader') {
                 roleUpgrader.run(creep);

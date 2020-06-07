@@ -1,10 +1,10 @@
 var targetRoom = '';
 var expandRoom = '';
-var finished = 0;
+var finished = 1;
 
 var autoExpand = {
     run: function() {
-        if (targetRoom != '' && expandRoom != '' && finished) {
+        if (targetRoom != '' && expandRoom != '') {
             var construction_spawn = Game.rooms[targetRoom].find(FIND_CONSTRUCTION_SITES, {
                 filter: spawn => (spawn.structureType == STRUCTURE_SPAWN)
             });

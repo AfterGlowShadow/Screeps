@@ -1,4 +1,4 @@
-var allowBuilder = 1;
+var allowBuilder = 0;
 
 var expectedHarvesters = 1;
 var expectedHarvestersFar = 1;
@@ -6,6 +6,7 @@ var expectedMiner = 1;
 var expectedRepairers = 1;
 var expectedSuppliers = 1;
 var expectedTransporters = 1;
+var expectedTransportersSpc = 1;
 var expectedUpgraders = 1;
 
 var autoSpawn_W34N2 = {
@@ -17,6 +18,7 @@ var autoSpawn_W34N2 = {
         var repairers = _.filter(Game.creeps, (creep) => creep.memory.role == 'repairer' && creep.pos.roomName == 'W34N2');
         var suppliers = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.pos.roomName == 'W34N2')
         var transporters = _.filter(Game.creeps, (creep) => creep.memory.role == 'transporter' && creep.pos.roomName == 'W34N2');
+        var transportersSpc = _.filter(Game.creeps, (creep) => creep.memory.role == 'transporterSpc' && creep.pos.roomName == 'W34N2');
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.pos.roomName == 'W34N2');
         
         //w34n2
@@ -70,8 +72,16 @@ var autoSpawn_W34N2 = {
             if (transporters.length < expectedTransporters) {
                 var newName = 'Transporter' + Game.time;
                 console.log('Spawning new Transporter: ' + newName);
-                spawn[0].spawnCreep([CARRY,CARRY,MOVE,MOVE], newName,
+                spawn[0].spawnCreep([CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                     {memory: {role: 'transporter'}});
+            }
+            
+            //200 Energy
+            if (transportersSpc.length < expectedTransportersSpc) {
+                var newName = 'TransporterSpc' + Game.time;
+                console.log('Spawning new TransporterSpc: ' + newName);
+                spawn[0].spawnCreep([CARRY,CARRY,MOVE,MOVE], newName,
+                    {memory: {role: 'transporterSpc'}});
             }
     
             //150 Energy
@@ -86,7 +96,7 @@ var autoSpawn_W34N2 = {
             if (upgraders.length < expectedUpgraders) {
                 var newName = 'Upgrader' + Game.time;
                 console.log('Spawning new Upgrader: ' + newName);
-                spawn[0].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
+                spawn[0].spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
                     {memory: {role: 'upgrader'}});
             }
             

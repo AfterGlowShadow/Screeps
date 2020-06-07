@@ -29,7 +29,7 @@ var autoSpawn_W33N5 = {
         }
 
         //200 Energy
-        if (miners_W33N5.length < expectedMiner_W33N5) {
+        if (miners_W33N5.length < expectedMiner_W33N5 && Game.getObjectById('5bbcb1be40062e4259e932b0').ticksToRegeneration == undefined) {
             var newName = 'Miner_W33N5_' + Game.time;
             console.log('Spawning new Miner: ' + newName);
             Game.spawns['Spawn3'].spawnCreep([WORK,CARRY,MOVE], newName,

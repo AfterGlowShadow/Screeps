@@ -11,6 +11,7 @@ var autoMarket      = require('auto.market');
 var autoSpawn       = require('auto.spawn');
 var autoTower       = require('auto.tower');
 var autoWork        = require('auto.work');
+var stuffPower      = require('stuff.power');
 
 var marketMode = 1;
 
@@ -19,7 +20,9 @@ module.exports.loop = function() {
     console.log();
     console.log();
     
-    //Game.creeps['attacker_W33N5_18096492'].moveTo(new RoomPosition(25, 20, 'W33N3'));
+    // if (Game.creeps['claim'].claimController(Game.creeps['claim'].room.controller) == ERR_NOT_IN_RANGE) {
+    //     Game.creeps['claim'].moveTo(Game.creeps['claim'].room.controller, {stroke: '#ffffff'});
+    // }
     
     // for (var name in Game.creeps) {
     //     var creep = Game.creeps[name];
@@ -39,4 +42,5 @@ module.exports.loop = function() {
     autoSpawn.run();
     autoTower.run();
     autoWork.run();
+    stuffPower.run();
 }
