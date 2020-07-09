@@ -18,7 +18,7 @@ var autoDeal = {
                     }
                 }
                 
-                // sell ultrutrium
+                // sell utrium
                 if (Terminal.store.getUsedCapacity(RESOURCE_UTRIUM) > 0) {
                     var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_UTRIUM});
                     buyOrder.sort((a,b) => b.price - a.price);
@@ -36,13 +36,28 @@ var autoDeal = {
                     buyOrder.sort((a,b) => b.price - a.price);
                     if (buyOrder.length > 0) {
                         var tax = Game.market.calcTransactionCost(100, buyOrder[0].roomName, Terminal.pos.roomName);
-                        if (buyOrder[0].price > 0.000) {
+                        if (buyOrder[0].price > 0.010) {
                             if (Game.market.deal(buyOrder[0].id, 100, Terminal.pos.roomName) == OK) {
-                                console.log('sold 100 ultrium bar with ' + tax + ' tax.');
+                                console.log('sold 100 utrium bar with ' + tax + ' tax.');
                             }
                         }
                     }
                 }
+                
+                //sell keanium bar
+                if (Terminal.store.getUsedCapacity(RESOURCE_KEANIUM_BAR) > 0) {
+                    var buyOrder = Game.market.getAllOrders({type: ORDER_BUY, resourceType: RESOURCE_KEANIUM_BAR});
+                    buyOrder.sort((a,b) => b.price - a.price);
+                    if (buyOrder.length > 0) {
+                        var tax = Game.market.calcTransactionCost(100, buyOrder[0].roomName, Terminal.pos.roomName);
+                        if (buyOrder[0].price > 0.010) {
+                            if (Game.market.deal(buyOrder[0].id, 100, Terminal.pos.roomName) == OK) {
+                                console.log('sold 100 keanium bar with ' + tax + ' tax.');
+                            }
+                        }
+                    }
+                }
+                
                 
                 //sell battery
                 if (Terminal.store.getUsedCapacity(RESOURCE_BATTERY) > 0) {
@@ -50,7 +65,7 @@ var autoDeal = {
                     buyOrder.sort((a,b) => b.price - a.price);
                     if (buyOrder.length > 0) {
                     var tax = Game.market.calcTransactionCost(100, buyOrder[0].roomName, Terminal.pos.roomName);
-                        if (buyOrder[0].price > 0.000) {
+                        if (buyOrder[0].price > 0.010) {
                             if (Game.market.deal(buyOrder[0].id, 100, Terminal.pos.roomName) == OK) {
                                 console.log('sold 100 battery with ' + tax + ' tax.');
                             }

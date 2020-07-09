@@ -29,6 +29,11 @@ module.exports.loop = function() {
     //     creep.suicide();
     // }
     
+    if (Game.cpu.bucket == 10000) {
+        Game.cpu.generatePixel()
+        console.log("User 5000 CPU generated 1 Pixel")
+    }
+    
     autoattack.run();
     autodefence.run();
     autoexpand.run();

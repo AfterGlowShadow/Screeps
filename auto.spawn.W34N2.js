@@ -1,4 +1,4 @@
-var allowBuilder = 0;
+var allowBuilder = 1;
 
 var expectedHarvesters = 1;
 var expectedHarvestersFar = 1;

@@ -10,21 +10,11 @@ var roleHarvesterFar = {
             }
         }
         else {
-            var tower = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                filter: (structure) => structure.structureType == STRUCTURE_TOWER
+            var links = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (structure) => structure.structureType == STRUCTURE_LINK
             })
-            if (tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
-                if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(tower.pos, {visualizePathStyle: {stroke: '#ffffff'}});
-                }
-            }
-            else {
-                var links = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-                    filter: (structure) => structure.structureType == STRUCTURE_LINK
-                })
-                if (creep.transfer(links, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(links.pos, {visualizePathStyle: {stroke: '#ffffff'}});
-                }
+            if (creep.transfer(links, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(links.pos, {visualizePathStyle: {stroke: '#ffffff'}});
             }
         }
 	}

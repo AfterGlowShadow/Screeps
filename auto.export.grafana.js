@@ -13,6 +13,7 @@ var grafanaExport = {
         Memory.stats.bucket = Game.cpu.bucket;
         Memory.stats.gameTime = Game.time;
         Memory.stats.credits = Game.market.credits;
+        Memory.stats.pixel = Game.resources.pixel;
         Memory.stats.storageW34N2 = Game.rooms['W34N2'].storage.store.getUsedCapacity();
         Memory.stats.storageW34N3 = Game.rooms['W34N3'].storage.store.getUsedCapacity();
         Memory.stats.storageW33N5 = Game.rooms['W33N5'].storage.store.getUsedCapacity();

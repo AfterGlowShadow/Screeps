@@ -18,6 +18,9 @@ var autoLink = {
         
         //W32N4
         Game.getObjectById('5ec2947a5bab2c18515da0cc').transferEnergy(Game.getObjectById('5ec2cecba54a6e5e61015f7f'));
+        
+        //W32N5
+        Game.getObjectById('5ef0400703cc34e845ab3b05').transferEnergy(Game.getObjectById('5ef0a0b8baeffd2a4e90453b'));
     }
 }
 

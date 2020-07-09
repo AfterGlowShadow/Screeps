@@ -6,6 +6,7 @@ var expectedMiner_W34N3 = 1;
 var expectedRepairers_W34N3 = 0;
 var expectedSuppliers_W34N3 = 1;
 var expectedTransporters_W34N3 = 1;
+var expectedTransportersSpc_W34N3 = 1;
 var expectedUpgraders_W34N3 = 1;
 
 var autoSpawn_W34N3 = {
@@ -17,6 +18,7 @@ var autoSpawn_W34N3 = {
         var repairers_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'repairer' && creep.pos.roomName == 'W34N3');
         var suppliers_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'supplier' && creep.pos.roomName == 'W34N3');
         var transporters_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'transporter' && creep.pos.roomName == 'W34N3');
+        var transportersSpc_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'transporterSpc' && creep.pos.roomName == 'W34N3');
         var upgraders_W34N3 = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader' && creep.pos.roomName == 'W34N3');
         
         //w34n3
@@ -64,6 +66,14 @@ var autoSpawn_W34N3 = {
                 console.log('Spawning new Transporter for W34N3: ' + newName);
                 spawn[0].spawnCreep([CARRY,CARRY,MOVE,MOVE], newName,
                     {memory: {role: 'transporter'}});
+            }
+            
+            //200 Energy
+            if (transportersSpc_W34N3.length < expectedTransportersSpc_W34N3) {
+                var newName = 'TransporterSpc_W34N3' + Game.time;
+                console.log('Spawning new TransporterSpc for W34N3: ' + newName);
+                spawn[0].spawnCreep([CARRY,CARRY,MOVE,MOVE], newName,
+                    {memory: {role: 'transporterSpc'}});
             }
     
             //150 Energy

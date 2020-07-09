@@ -32,32 +32,33 @@ var roleHarvester = {
             }
         }
         else {
-            switch (creep.pos.roomName) {
-                case 'W34N2':
+            switch (creep.room.controller.level) {
+                case 8:
+                    // same as level 7
+                case 7:
                     var targets = creep.room.find(FIND_STRUCTURES, {
-                        filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) || 
-                                                (structure.structureType == STRUCTURE_FACTORY && structure.store.getUsedCapacity(RESOURCE_ENERGY) < 25000)
+                        filter: (i) =>  (i.structureType == STRUCTURE_STORAGE   && i.store[RESOURCE_ENERGY] < 1000000) ||
+                                        (i.structureType == STRUCTURE_FACTORY   && i.store[RESOURCE_ENERGY] < 1000000)
+                    });
+                case 6:
+                    // same as level 4
+                case 5:
+                    // same as level 4
+                case 4:
+                    var targets = creep.room.find(FIND_STRUCTURES, {
+                        filter: (i) =>  (i.structureType == STRUCTURE_STORAGE   && i.store[RESOURCE_ENERGY] < 1000000)
+                    });
+                case 3:
+                    // same as level 2
+                case 2:
+                    var targets = creep.room.find(FIND_STRUCTURES, {
+                        filter: (i) =>  (i.structureType == STRUCTURE_SPAWN     && i.store[RESOURCE_ENERGY] < 300) ||
+                                        (i.structureType == STRUCTURE_EXTENSION && i.store[RESOURCE_ENERGY] < 50)
                     });
                     break;
-                case 'W34N3':
+                case 1:
                     var targets = creep.room.find(FIND_STRUCTURES, {
-                        filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) || 
-                                                (structure.structureType == STRUCTURE_FACTORY && structure.store.getUsedCapacity(RESOURCE_ENERGY) < 25000)
-                    });
-                    break;
-                case 'W33N5':
-                    var targets = creep.room.find(FIND_STRUCTURES, {
-                        filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) 
-                    });
-                    break;
-                case 'W32N4':
-                    var targets = creep.room.find(FIND_STRUCTURES, {
-                        filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) 
-                    });
-                    break;
-                case 'W32N5':
-                    var targets = creep.room.find(FIND_STRUCTURES, {
-                        filter: (structure) =>  (structure.structureType == STRUCTURE_STORAGE && structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0) 
+                        filter: (i) =>  (i.structureType == STRUCTURE_SPAWN     && i.store[RESOURCE_ENERGY] < 300)
                     });
                     break;
             }

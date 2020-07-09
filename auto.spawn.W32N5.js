@@ -28,7 +28,7 @@ var autoSpawn_W32N5 = {
             if (harvesters.length < expectedHarvesters) {
                 var newName = 'Harvester_W32N5_' + Game.time;
                 console.log('Spawning new Harvester: ' + newName);
-                spawn[0].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
+                spawn[0].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                     {memory: {role: 'harvester'}});
             }
     
@@ -78,7 +78,7 @@ var autoSpawn_W32N5 = {
             if (upgraders.length < expectedUpgraders) {
                 var newName = 'Upgrader_W32N5_' + Game.time;
                 console.log('Spawning new Upgrader: ' + newName);
-                spawn[0].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
+                spawn[0].spawnCreep([WORK,WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], newName,
                     {memory: {role: 'upgrader'}});
             }
             
