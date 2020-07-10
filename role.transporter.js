@@ -21,7 +21,8 @@ var roleTransporter = {
                                         (i.structureType == STRUCTURE_TOWER     && i.store[RESOURCE_ENERGY] < 1000) ||
                                         (i.structureType == STRUCTURE_LINK      && i.store[RESOURCE_ENERGY] < 400) ||
                                         (i.structureType == STRUCTURE_LAB       && i.store[RESOURCE_ENERGY] < 2000) ||
-                                        (i.structureType == STRUCTURE_TERMINAL  && i.store[RESOURCE_ENERGY] < 10000)
+                                        (i.structureType == STRUCTURE_TERMINAL  && i.store[RESOURCE_ENERGY] < 10000) ||
+                                        (i.structureType == STRUCTURE_NUKER     && i.store[RESOURCE_ENERGY] < 300000)
                     });
                     break;
                 case 7:
