@@ -19,7 +19,7 @@ var roleTransporter = {
                         filter: (i) =>  (i.structureType == STRUCTURE_SPAWN     && i.store[RESOURCE_ENERGY] < 300) ||
                                         (i.structureType == STRUCTURE_EXTENSION && i.store[RESOURCE_ENERGY] < 200) ||
                                         (i.structureType == STRUCTURE_TOWER     && i.store[RESOURCE_ENERGY] < 1000) ||
-                                        (i.structureType == STRUCTURE_LINK      && i.store[RESOURCE_ENERGY] < 400) ||
+                                        (i.structureType == STRUCTURE_LINK      && i.store[RESOURCE_ENERGY] < 400) && (i.id != '5e5374800a99ae4be2286c7a') ||
                                         (i.structureType == STRUCTURE_LAB       && i.store[RESOURCE_ENERGY] < 2000) ||
                                         (i.structureType == STRUCTURE_TERMINAL  && i.store[RESOURCE_ENERGY] < 10000) ||
                                         (i.structureType == STRUCTURE_NUKER     && i.store[RESOURCE_ENERGY] < 300000)

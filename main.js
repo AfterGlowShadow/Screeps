@@ -16,24 +16,24 @@ var stuffPower      = require('stuff.power');
 var marketMode = 1;
 
 module.exports.loop = function() {
-    
+
     console.log();
     console.log();
-    
+
     // if (Game.creeps['claim'].claimController(Game.creeps['claim'].room.controller) == ERR_NOT_IN_RANGE) {
     //     Game.creeps['claim'].moveTo(Game.creeps['claim'].room.controller, {stroke: '#ffffff'});
     // }
-    
+
     // for (var name in Game.creeps) {
     //     var creep = Game.creeps[name];
     //     creep.suicide();
     // }
-    
+
     if (Game.cpu.bucket == 10000) {
         Game.cpu.generatePixel()
-        console.log("User 5000 CPU generated 1 Pixel")
+        console.log("Use 5000 CPU generated 1 Pixel")
     }
-    
+
     autoattack.run();
     autodefence.run();
     autoexpand.run();
@@ -41,7 +41,7 @@ module.exports.loop = function() {
     exportGrafana.run();
     exportRoom.run();
     autoFactory.run();
-    autoLabtory.run();
+    autoLabtory.run("W34N2");
     autoLink.run();
     autoMarket.run(marketMode);
     autoSpawn.run();
