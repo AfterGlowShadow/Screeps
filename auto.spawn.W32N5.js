@@ -1,6 +1,6 @@
 var allowBuilder = 1;
 
-var expectedHarvesters = 3;
+var expectedHarvesters = 1;
 var expectedHarvestersFar = 0;
 var expectedMiner = 0;
 var expectedRepairers = 1;
@@ -28,7 +28,7 @@ var autoSpawn_W32N5 = {
             if (harvesters.length < expectedHarvesters) {
                 var newName = 'Harvester_W32N5_' + Game.time;
                 console.log('Spawning new Harvester: ' + newName);
-                spawn[0].spawnCreep([WORK,CARRY,MOVE], newName,
+                spawn[0].spawnCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE], newName,
                     {memory: {role: 'harvester'}});
             }
 
