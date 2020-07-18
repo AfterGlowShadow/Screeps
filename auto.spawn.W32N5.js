@@ -6,7 +6,7 @@ var expectedMiner = 0;
 var expectedRepairers = 1;
 var expectedSuppliers = 1;
 var expectedTransporters = 1;
-var expectedUpgraders = 1;
+var expectedUpgraders = 0;
 
 var autoSpawn_W32N5 = {
     run: function() {

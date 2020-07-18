@@ -74,7 +74,7 @@ var autoSpawn_W32N4 = {
         if (upgraders_W32N4.length < expectedUpgraders_W32N4) {
             var newName = 'Upgrader_W32N4_' + Game.time;
             console.log('Spawning new Upgrader: ' + newName);
-            Game.spawns['Spawn_W32N4_1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
+            Game.spawns['Spawn_W32N4_1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE], newName,
                 {memory: {role: 'upgrader'}});
         }
         
