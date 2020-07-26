@@ -13,9 +13,16 @@ var roleRepairer = {
         }
         
         var room = creep.room
-        var targets = room.find(FIND_STRUCTURES, {
-            filter: (object) => ((object.structureType == STRUCTURE_WALL) || (object.structureType == STRUCTURE_RAMPART)) && ((object.hits != undefined) && (object.hits < object.hitsMax))
-        });
+        if (room.find(FIND_STRUCTURES, {filter: (object => (object.structureType == STRUCTURE_TOWER))}).length > 0) {
+            var targets = room.find(FIND_STRUCTURES, {
+                filter: (object) => ((object.structureType == STRUCTURE_WALL) || (object.structureType == STRUCTURE_RAMPART)) && ((object.hits != undefined) && (object.hits < object.hitsMax))
+            });
+        }
+        else {
+            var targets = room.find(FIND_STRUCTURES, {
+                filter: (object) => ((object.hits != undefined) && (object.hits < object.hitsMax))
+            });
+        }
         
         targets.sort((a,b) => a.hits - b.hits);
         
